@@ -4,17 +4,10 @@ from .config import Format
 
 
 def expand(format_: Format) -> list[tuple[str, str]]:
-    """Return focused Stage-1 searches from the format's own terms only.
+    """Return exact-phrase Stage-1 searches from the sole format bank.
 
-    The suffixes are shared retrieval syntax, not a second taxonomy or
-    per-format configuration bank. They favor videos that expose a complete,
-    observable interaction instead of short topical explainers.
+    Each query term encodes interaction evidence (for example, ``with client``
+    or ``call with prospect``). Quoting it prevents broad topical matches such
+    as an advice lecture or a video about how to conduct a sales call.
     """
-    queries: list[tuple[str, str]] = []
-    for term in format_.query_terms:
-        queries.extend((
-            (term, f'"{term}"'),
-            (term, f'"{term}" "full session"'),
-            (term, f'"{term}" "real session"'),
-        ))
-    return queries
+    return [(term, f'"{term}"') for term in format_.query_terms]
