@@ -17,9 +17,11 @@ class YouTube:
                 return json.load(response)
         except urllib.error.HTTPError as e:
             raise RuntimeError(f"YouTube API {e.code}: {e.read().decode('utf-8', 'replace')}") from e
-    def search(self, term: str, token: str | None) -> dict:
+    def search(self, term: str, token: str | None, published_after: str | None = None, published_before: str | None = None) -> dict:
         args = dict(part="snippet", q=term, type="video", maxResults=50, order="relevance")
         if token: args["pageToken"] = token
+        if published_after: args["publishedAfter"] = published_after
+        if published_before: args["publishedBefore"] = published_before
         return self.get("search", **args)
     def uploads_playlist(self, channel_id: str) -> str | None:
         data = self.get("channels", part="contentDetails", id=channel_id, maxResults=1)
