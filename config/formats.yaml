@@ -1,0 +1,28 @@
+interaction_formats:
+  teaching:
+    description: "A teacher, coach, or expert guides a learner."
+    query_terms: ["lesson with student", "live coaching", "one-on-one coaching"]
+  consultation:
+    description: "An advisor gives individualized advice to a client."
+    query_terms: ["client consultation", "personal consultation", "advice session"]
+  assessment:
+    description: "An expert evaluates a participant and provides a judgment or diagnosis."
+    query_terms: ["assessment session", "audit with client", "mock test feedback"]
+  interview:
+    description: "A recurring host asks questions of different guests."
+    query_terms: ["in-depth interview with", "conversation with guest", "personal story interview"]
+  critique:
+    description: "A reviewer evaluates a participant's artifact or performance."
+    query_terms: ["portfolio review", "student critique", "work review with creator"]
+  counseling:
+    description: "A counselor or mediator responds to personal or relational situations."
+    query_terms: ["counseling session", "family consultation", "mediation session"]
+  call_in:
+    description: "A recurring host responds to different callers or audience members."
+    query_terms: ["live call-in", "viewer question", "subscriber consultation"]
+  collaborative_task:
+    description: "A recurring expert or peer works jointly with different participants."
+    query_terms: ["work with client", "guided session", "solve together"]
+  service_and_sales:
+    description: "A service provider or salesperson responds to different customers."
+    query_terms: ["customer consultation", "buyer consultation", "sales consultation"]
